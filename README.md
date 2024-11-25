@@ -1,6 +1,6 @@
 # games_rr
 
-membuat review dan recomended game terbaru/ terviral
+membuat rekomendasi dan review game terviral
 
 ## Getting Started
 
