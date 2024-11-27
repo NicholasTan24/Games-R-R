@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +56,28 @@
       <option name="presentableId" value="Default" />
       <updated>1732533839291</updated>
     </task>
+    <task id="LOCAL-00001" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732637784670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732637784670</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732637881474</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732637881474</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge pull request #3 from NicholasTan24/Rafael&#10;&#10;Create gamesrr_model_data.dart" />
+    <MESSAGE value="Menambahkan Gambar Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menambahkan Gambar Game" />
   </component>
 </project>
