@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(1)/Judul1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(1)/Wukong1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(1)/Wukong2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(1)/Wukong3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(1)/Wukong4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(2)/Judul1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(2)/cod1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(2)/cod2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(2)/cod3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NamaGame(2)/cod4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +90,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732675411214</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732683146352</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732683146352</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732683187348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732683187348</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
