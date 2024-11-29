@@ -1,35 +1,48 @@
 import 'package:flutter/material.dart';
 
+import 'Screen/HomeScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        title: 'Games-R-R',
+        theme: ThemeData(scaffoldBackgroundColor: Colors.transparent,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+          useMaterial3: true,
+        ),
+        home:Gradient(child: Homescreen()),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class Gradient extends StatelessWidget {
+  final Widget child;
+  const Gradient({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Color(0xff1E3E62),Colors.white,],
+          begin: Alignment.topCenter,
+          end: Alignment(0,10)
+          ),
+        ),
+        child: child,
+      ),
     );
   }
 }
+
