@@ -37,7 +37,7 @@ class Gradient extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [Color(0xff1E3E62),Colors.white,],
           begin: Alignment.topCenter,
-          end: Alignment(0,10)
+          end: Alignment(0,3)
           ),
         ),
         child: child,
