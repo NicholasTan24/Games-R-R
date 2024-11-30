@@ -5,7 +5,7 @@ class Games{
   final String genre;
   final String requirements;
   final String imageAsset;
-  final List<String> preview;
+  final List<String> previewUrls;
   bool isFavorite;
 
   Games({
@@ -15,7 +15,7 @@ class Games{
     required this.genre,
     required this.requirements,
     required this.imageAsset,
-    required this.preview,
+    required this.previewUrls,
     this.isFavorite = false,
   });
 

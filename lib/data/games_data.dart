@@ -1,11 +1,4 @@
-import '../model/games.dart';
-
-var displayList=[
-    'GambarGame/Judul1.jpeg',
-    'GambarGame/Judul2.jpg',
-    'GambarGame/Judul3.jpg',
-    'GambarGame/Judul7.png'
-];
+import '../model/gamesrr_model_data.dart';
 
 var gameList = [
   Games(
@@ -13,9 +6,9 @@ var gameList = [
     releaseDate: 'August 20, 2024',
     description: 'Based on the classic Chinese novel Journey to the West, this action RPG allows players to control Sun Wukong as he battles legendary figures from Chinese mythology. The game combines elements of the soulslike genre with intricate environments and challenging gameplay.',
     genre: 'Action RPG, Soulslike',
-    requirements: 'Minimum: OS: Windows 10 (64-bit), Processor: Intel Core i5-8400 / AMD Ryzen 5 1600, Memory: 16 GB RAM, Graphics: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB), Storage: 130 GB available space',
+    requirements: 'Minimum OS: Windows 10 (64-bit), Processor: Intel Core i5-8400 / AMD Ryzen 5 1600, Memory: 16 GB RAM, Graphics: NVIDIA GeForce GTX 1060 (6GB) / AMD Radeon RX 580 (8GB), Storage: 130 GB available space',
     imageAsset: 'GambarGame/Judul1.jpeg',
-    preview: [
+    previewUrls: [
       'GambarGame/Wukong1.jpg',
       'GambarGame/Wukong2.jpg',
       'GambarGame/Wukong3.jpg',
@@ -30,7 +23,7 @@ var gameList = [
     genre: 'First-Person Shooter (FPS)',
     requirements: 'OS: Windows XP or later, Processor: Intel Core 2 Duo E6600 / AMD Phenom X3 8750, Memory: 2 GB RAM, Graphics: NVIDIA GeForce 8600 / ATI Radeon HD 2600, Storage: At least 12 GB free disk space',
     imageAsset: 'GambarGame/Judul2.jpg',
-    preview: [
+    previewUrls: [
       'GambarGame/cod1.jpg',
       'GambarGame/cod2.jpg',
       'GambarGame/cod3.jpg',
@@ -45,7 +38,7 @@ var gameList = [
     genre: 'Survival Horror',
     requirements: 'OS: Windows XP or later, Processor: Pentium III or equivalent, Memory: 512 MB RAM, Graphics: DirectX compatible video card with at least 32 MB VRAM',
     imageAsset: 'GambarGame/Judul3.jpg',
-    preview: [
+    previewUrls: [
       'GambarGame/SilentHill1.jpg',
       'GambarGame/SilentHill2.jpg',
       'GambarGame/SilentHill3.jpg',
@@ -60,7 +53,7 @@ var gameList = [
     genre: 'Sports, Fighting',
     requirements: 'OS: Windows 10 (64-bit), Processor: Intel Core i5-2500 / AMD FX-6300, Memory: 8 GB RAM, Graphics: NVIDIA GeForce GTX 660 / AMD Radeon HD 7850, Storage: At least 50 GB available space',
     imageAsset: 'GambarGame/Judul4.jpg',
-    preview: [
+    previewUrls: [
       'GambarGame/wwe1.jpg',
       'GambarGame/wwe2.jpg',
       'GambarGame/wwe3.png',
@@ -75,7 +68,7 @@ var gameList = [
     genre: 'Action-Adventure, Open World',
     requirements: '(720p @ 30 fps): OS: Windows 10 or later, CPU: Intel Core i3-7100 or AMD Ryzen 3 1200, RAM: 8 GB, GPU: NVIDIA GeForce GTX 960 or AMD Radeon RX 5500 XT, Storage: 75 GB available space (SSD recommended)',
     imageAsset: 'GambarGame/Judul5.jpg',
-    preview: [
+    previewUrls: [
       'GambarGame/Tsushima1.jpg',
       'GambarGame/Tsushima2.jpg',
       'GambarGame/Tsushima3.jpg',
@@ -90,7 +83,7 @@ var gameList = [
     genre: 'Action-adventure, platformer',
     requirements: 'OS: Windows 10 (64-bit) | Processor: AMD FX 6350 or Intel Core i5-3570 | Memory: 8 GB RAM | Graphics: NVIDIA GeForce GTX 660 or AMD Radeon HD 7870 | DirectX: Version 11 | Network: Broadband Internet connection | Storage: 50 GB available space',
     imageAsset: 'GambarGame/Judul6.jpg',
-    preview: [
+    previewUrls: [
       'GambarGame/two1.jpg',
       'GambarGame/two2.jpg',
       'GambarGame/two3.jpg',
@@ -105,7 +98,7 @@ var gameList = [
     genre: 'Fighting',
     requirements: 'OS: Windows 10 (64-bit) | Processor: Intel Core i5-4690 or AMD Ryzen 5 1600 | Memory: 8 GB RAM | Graphics: NVIDIA GeForce GTX 1060 or AMD Radeon RX 580 | DirectX: Version 12 | Network: Broadband Internet connection | Storage: TBD (To Be Determined)',
     imageAsset: 'GambarGame/Judul7.png',
-    preview: [
+    previewUrls: [
       'GambarGame/Tekken1.jpg',
       'GambarGame/Tekken2.jpg',
       'GambarGame/Tekken3.jpg',
@@ -120,7 +113,7 @@ var gameList = [
     genre: 'Action-adventure, open-world',
     requirements: 'OS: Windows 7 (64-bit) Service Pack 1 or Windows 10 (64-bit) | Processor: Intel Core i5-2500K or AMD FX-6300 | Memory: 8 GB RAM | Graphics: NVIDIA GeForce GTX 770 or AMD Radeon R9 280 | DirectX: Version 11 | Network: Broadband Internet connection | Storage: Minimum of 150 GB free disk space',
     imageAsset: 'GambarGame/Judul8.jpeg',
-    preview: [
+    previewUrls: [
       'GambarGame/Rdr1.jpg',
       'GambarGame/Rdr2.jpg',
       'GambarGame/Rdr3.jpg',
