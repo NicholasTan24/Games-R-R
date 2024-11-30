@@ -93,8 +93,8 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Divider(color: Colors.black),
-                            SizedBox(height: 10,),
+                            Divider(color: Colors.black,thickness: 2),
+                            SizedBox(height: 20),
                             SizedBox(
                               height: 100,
                               child: ListView.builder(
