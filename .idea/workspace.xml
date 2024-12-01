@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" afterDir="false" />
-    </list>
+    <list default="true" id="81ac609d-03a3-4329-b7f5-2f71471927e8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,88 +29,53 @@
 
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
+  <component name="GithubPullRequestsUISettings">
+    {
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NicholasTan24/Games-R-R.git&quot;,
-
-  <component name="ProjectColorInfo">{
+    <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectViewState">
+      <option name="hideEmptyMiddlePackages" value="true" />
+      <option name="showLibraryContents" value="true" />
+    </component>
+    }
+}
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Gregory",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="" />
-      <created>1732533839291</created>
+      <changelist id="81ac609d-03a3-4329-b7f5-2f71471927e8" name="Changes" comment="" />
+      <created>1733044590365</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732533839291</updated>
+      <updated>1733044590365</updated>
     </task>
-    <task id="LOCAL-00001" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732637784670</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732637784670</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732637881474</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1732637881474</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732675411214</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1732675411214</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732683146352</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1732683146352</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732683187348</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1732683187348</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge pull request #3 from NicholasTan24/Rafael&#10;&#10;Create gamesrr_model_data.dart" />
-    <MESSAGE value="Menambahkan Gambar Game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menambahkan Gambar Game" />
   </component>
 </project>
