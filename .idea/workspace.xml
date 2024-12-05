@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/games_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/games_data.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="NicoWijaya" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -33,24 +37,44 @@
 
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
+  <component name="GithubPullRequestsUISettings">
+    {
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NicholasTan24/Games-R-R.git&quot;,
-
-  <component name="ProjectColorInfo">{
+    <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectViewState">
+      <option name="hideEmptyMiddlePackages" value="true" />
+      <option name="showLibraryContents" value="true" />
+    </component>
+    }
+}
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2pnZW7J2FtySySUqh6ciw7cNnc0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
     </key>
   </component>
