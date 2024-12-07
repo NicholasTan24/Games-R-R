@@ -1,4 +1,4 @@
-class Games{
+class Games {
   final String name;
   final String releaseDate;
   final String description;
@@ -18,5 +18,4 @@ class Games{
     required this.previewUrls,
     this.isFavorite = false,
   });
-
-
+}
