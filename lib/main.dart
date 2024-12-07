@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:games_rr/data/games_data.dart';
 import 'package:games_rr/screens/HomeScreen.dart';
+import 'package:games_rr/screens/Sign_In.dart';
+import 'package:games_rr/screens/Sign_Up.dart';
 import 'package:games_rr/screens/layar_detail.dart';
 
 void main() {
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      home:Gradient(child: DetailScreen(games: gameList[0])),
+      home:Gradient(child: SignUpScreen()),
+        //SignInscreen()
+      //DetailScreen(games: gameList[0])
       //Homescreen()
     );
   }
