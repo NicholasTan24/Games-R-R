@@ -24,7 +24,7 @@ class _DetailScreenState extends State<DetailScreen> {
               children: [
                 //padding image
                 Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
@@ -57,34 +57,34 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   // info atas(nama game dan tombol favorit)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         widget.games.name,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.favorite_border))
+                          onPressed: () {}, icon: Icon(Icons.favorite_border))
                     ],
                   ),
                   //gambar gambarnya
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Divider(color: Colors.black, thickness: 2),
-                        const SizedBox(height: 20),
+                        Divider(color: Colors.black, thickness: 2),
+                        SizedBox(height: 20),
                         SizedBox(
                           height: 100,
                           child: ListView.builder(
@@ -92,7 +92,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             itemCount: widget.games.preview.length,
                             itemBuilder: (context, index) {
                               return Padding(
-                                padding: const EdgeInsets.only(right: 8),
+                                padding: EdgeInsets.only(right: 8),
                                 // bingkai
                                 child: GestureDetector(
                                   onTap: () {},
@@ -117,7 +117,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                           color: Colors.indigo.shade700,
                                         ),
                                         errorWidget: (context, url, error) =>
-                                            const Icon(Icons.error),
+                                            Icon(Icons.error),
                                       ),
                                     ),
                                   ),
@@ -126,8 +126,8 @@ class _DetailScreenState extends State<DetailScreen> {
                             },
                           ),
                         ),
-                        const SizedBox(height: 5),
-                        const Text(
+                        SizedBox(height: 5),
+                        Text(
                           'Tap untuk memperbesar',
                           style: TextStyle(
                             fontSize: 12,
@@ -135,12 +135,12 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ),
                         // info tengah (realese date, genre, requirements. dan deskripsi)
-                        const SizedBox(height: 15),
+                        SizedBox(height: 15),
                         Row(
                           children: [
-                            const Icon(Icons.calendar_month, color: Colors.black),
-                            const SizedBox(width: 20),
-                            const SizedBox(
+                            Icon(Icons.calendar_month, color: Colors.black),
+                            SizedBox(width: 20),
+                            SizedBox(
                                 width: 100,
                                 child: Text('Release Date',
                                     style: TextStyle(
@@ -148,12 +148,12 @@ class _DetailScreenState extends State<DetailScreen> {
                             Text(': ${widget.games.releaseDate}'),
                           ],
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: 15),
                         Row(
                           children: [
-                            const Icon(Icons.theater_comedy, color: Colors.black),
-                            const SizedBox(width: 20),
-                            const SizedBox(
+                            Icon(Icons.theater_comedy, color: Colors.black),
+                            SizedBox(width: 20),
+                            SizedBox(
                                 width: 100,
                                 child: Text('Genre',
                                     style: TextStyle(
@@ -161,12 +161,12 @@ class _DetailScreenState extends State<DetailScreen> {
                             Text(': ${widget.games.genre}'),
                           ],
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: 15),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(width: 20),
-                            const SizedBox(
+                            SizedBox(width: 20),
+                            SizedBox(
                               width: 200,
                               child: Row(
                                 children: [
@@ -180,16 +180,16 @@ class _DetailScreenState extends State<DetailScreen> {
                                 ],
                               ),
                             ),
-                            Text(widget.games.requirements,
+                            Text('${widget.games.requirements}',
                                 textAlign: TextAlign.justify),
                           ],
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: 15),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(width: 20),
-                            const SizedBox(
+                            SizedBox(width: 20),
+                            SizedBox(
                               width: 200,
                               child: Row(
                                 children: [
@@ -204,11 +204,11 @@ class _DetailScreenState extends State<DetailScreen> {
                                 ],
                               ),
                             ),
-                            Text(widget.games.description,
+                            Text('${widget.games.description}',
                                 textAlign: TextAlign.justify),
                           ],
                         ),
-                        const SizedBox(height: 30),
+                        SizedBox(height: 30),
                       ],
                     ),
                   )
