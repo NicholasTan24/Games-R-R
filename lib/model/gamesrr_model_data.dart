@@ -18,5 +18,5 @@ class Games{
     required this.preview,
     this.isFavorite = false,
   });
-
+}
 
