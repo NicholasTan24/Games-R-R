@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/HoverImage.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,29 +31,57 @@
 
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
+  <component name="GithubPullRequestsUISettings">
+    {
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NicholasTan24/Games-R-R.git&quot;,
-
-  <component name="ProjectColorInfo">{
+    <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
+    <component name="ProjectViewState">
+      <option name="hideEmptyMiddlePackages" value="true" />
+      <option name="showLibraryContents" value="true" />
+    </component>
+    }
+}
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2pe83353n2pMHQrayl7rQWXlH6C" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Rafa",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/rafam/StudioProjects/wisata_candi_rafa",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
