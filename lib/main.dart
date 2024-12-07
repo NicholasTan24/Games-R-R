@@ -31,7 +31,7 @@ class Gradient extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Color(0xff1E3E62),Colors.white,],
+          gradient: LinearGradient(colors: [Color(0xFF0b1640),Colors.white,],
               begin: Alignment.topCenter,
               end: Alignment(0,10)
           ),
