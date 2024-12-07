@@ -99,7 +99,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               height: 100,
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: widget.games.previewUrls.length,
+                                itemCount: widget.games.preview.length,
                                 itemBuilder: (context, index){
                                   return Padding(padding: EdgeInsets.only(right:8),
                                     // bingkai
@@ -116,7 +116,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(10),
                                           child: CachedNetworkImage(
-                                            imageUrl: widget.games.previewUrls[index],
+                                            imageUrl: widget.games.preview[index],
                                             width: 150,
                                             height: 150,
                                             fit: BoxFit.cover,
