@@ -112,9 +112,9 @@ class _HomescreenState extends State<Homescreen> {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                 ),
-                itemCount: 4,
+                itemCount: 6,
                 itemBuilder: (context, index) {
-                  return  SecondHover(games: gameList.skip(4).take(4).toList()[index].imageAsset);
+                  return  SecondHover(games: gameList.skip(4).take(6).toList()[index].imageAsset);
                 },
               ),
             ),
