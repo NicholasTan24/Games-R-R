@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:games_rr/screens/FavoriteScreen.dart';
 import 'package:games_rr/screens/HomeScreen.dart';
-import 'package:games_rr/screens/ProfileScreen.dart';
+import 'package:games_rr/screens/profile_screen.dart';
 import 'package:games_rr/screens/SearchScreen.dart';
 import 'package:games_rr/widgets/CostumeBackGround.dart';
 
@@ -40,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
     const Homescreen(),
     const SearchScreen(),
     const Favoritescreen(),
-    const Profilescreen(),
+    const ProfileScreen(),
   ];
 
   @override
