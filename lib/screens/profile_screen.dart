@@ -13,6 +13,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String fullName = '';
   String userName = '';
   int favoriteCandiCount = 0;
+  final TextEditingController _passwordController = TextEditingController();
+  String _errorText = '';
+  bool _obscurePassword = true;
 
   // TODO 5. Implementasi fungsi signIn
   void signIn(){
@@ -33,9 +36,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: Stack(
         children: [
           Container(
-            height: 200,
+            height: 150,
             width: double.infinity,
-            color: Colors.deepPurple,
+            color: Colors.blueGrey,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -45,13 +48,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 200 - 50),
+                    padding: const EdgeInsets.only(top: 100 - 10),
                     child: Stack(
                       alignment: Alignment.bottomRight,
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.deepPurple, width: 2),
+                            border: Border.all(color: Colors.black38, width: 2),
                             shape: BoxShape.circle,
                           ),
                           child: CircleAvatar(
@@ -64,7 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           IconButton(
                               onPressed: () {},
                               icon: Icon(Icons.camera_alt,
-                                  color: Colors.deepPurple[50]))
+                                  color: Colors.black))
                       ],
                     ),
                   ),
@@ -72,7 +75,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 //TODO: 3. Buat bagian ProfileInfo yang berisi info profil
                 // Baris Pengguna
                 SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
+                Divider(color: Colors.black),
                 SizedBox(height: 4),
                 Row(
                   children: [
@@ -97,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 // Baris Nama
                 SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
+                Divider(color: Colors.black),
                 SizedBox(height: 4),
                 Row(
                   children: [
@@ -122,7 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 // Baris Favorit
                 SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
+                Divider(color: Colors.black),
                 SizedBox(height: 4),
                 Row(
                   children: [
@@ -137,6 +140,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ],
                       ),
                     ),
+
                     Expanded(
                       child: Text(': $favoriteCandiCount', style: TextStyle(
                           fontSize: 18),
@@ -145,13 +149,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     if(isSignedIn) Icon(Icons.edit),
                   ],
                 ),
+                SizedBox(),
 
                 //TODO: 4. Buat ProfileActions yang berisi TextButton sign in/out
                 SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
+                Divider(color: Colors.black),
                 SizedBox(height: 20),
                 isSignedIn ? TextButton(onPressed: signOut, child: Text('Sign Out'))
-                    : TextButton(onPressed: signIn, child: Text('Sign In')),
+                    : TextButton(onPressed: signIn, child: Text('Sign In', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold))),
               ],
             ),
           )

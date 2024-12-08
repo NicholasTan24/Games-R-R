@@ -4,6 +4,7 @@ import 'package:games_rr/screens/HomeScreen.dart';
 import 'package:games_rr/screens/Sign_In.dart';
 import 'package:games_rr/screens/Sign_Up.dart';
 import 'package:games_rr/screens/layar_detail.dart';
+import 'package:games_rr/screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,10 +21,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      home:Gradient(child: SignUpScreen()),
+      home:Gradient(child: ProfileScreen()),
         //SignInscreen()
       //DetailScreen(games: gameList[0])
       //Homescreen()
+      //
     );
   }
 }
