@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e396868d-55ea-4548-941f-2d88c96c9641" name="Changes" comment="Update Gambar" />
+    <list default="true" id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="Menambahkan Gambar Game">
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/ProfileScreen.dart" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,46 +24,46 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="NicoWijaya" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-
+    &quot;assignee&quot;: &quot;GregoryNoelMarcello&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    {
+  <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NicholasTan24/Games-R-R.git&quot;,
-    <component name="ProjectColorInfo">{
+    &quot;accountId&quot;: &quot;6eeb1223-fc36-4214-84c1-a243e74e6307&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-    <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
-    <component name="ProjectViewState">
-      <option name="hideEmptyMiddlePackages" value="true" />
-      <option name="showLibraryContents" value="true" />
-    </component>
-    }
-}
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2pnZW7J2FtySySUqh6ciw7cNnc0" />
+  <component name="ProjectId" id="2pL88Hh4wLBRnwhKetBeM26niUJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "NicoWijaya"
+    "git-widget-placeholder": "#13 on Gregory",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/Videos/Tugas PAB NicoWijaya(2327240166)/Games-R-R",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -68,24 +71,78 @@
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Update Gambar">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="" />
+      <created>1732533839291</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732533839291</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Menambahkan Gambar Game">
       <option name="closed" value="true" />
-      <created>1733665355786</created>
+      <created>1732637784670</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1733665355786</updated>
+      <updated>1732637784670</updated>
     </task>
-    <task id="LOCAL-00002" summary="Update Gambar">
+    <task id="LOCAL-00002" summary="Menambahkan Gambar Game">
       <option name="closed" value="true" />
-      <created>1733665361312</created>
+      <created>1732637881474</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1733665361312</updated>
+      <updated>1732637881474</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732675411214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732675411214</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732683146352</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732683146352</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732683187348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732683187348</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1732686899278</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732686899278</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Menambahkan Gambar Game">
+      <option name="closed" value="true" />
+      <created>1733667777099</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733667777099</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,7 +157,19 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Gambar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Gambar" />
+    <MESSAGE value="Merge pull request #3 from NicholasTan24/Rafael&#10;&#10;Create gamesrr_model_data.dart" />
+    <MESSAGE value="Menambahkan Gambar Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menambahkan Gambar Game" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/screens/profile_screen.dart</url>
+          <line>132</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
