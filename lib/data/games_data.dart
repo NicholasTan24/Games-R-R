@@ -14,7 +14,7 @@ var gameList = [
       'GambarGame/Wukong3.jpg',
       'GambarGame/Wukong4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Call of Duty: Black Ops',
@@ -29,7 +29,7 @@ var gameList = [
       'GambarGame/cod3.jpg',
       'GambarGame/cod4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Silent Hill 2',
@@ -44,7 +44,7 @@ var gameList = [
       'GambarGame/SilentHill3.jpg',
       'GambarGame/SilentHill4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'WWE 2K24',
@@ -59,7 +59,7 @@ var gameList = [
       'GambarGame/wwe3.png',
       'GambarGame/wwe4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Ghost of Tsushima',
@@ -74,7 +74,7 @@ var gameList = [
       'GambarGame/Tsushima3.jpg',
       'GambarGame/Tsushima4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'It Takes Two',
@@ -89,7 +89,7 @@ var gameList = [
       'GambarGame/two3.jpg',
       'GambarGame/two4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Tekken 8',
@@ -104,7 +104,7 @@ var gameList = [
       'GambarGame/Tekken3.jpg',
       'GambarGame/Tekken4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Red Dead Redemption 2',
@@ -119,7 +119,7 @@ var gameList = [
       'GambarGame/Rdr3.jpg',
       'GambarGame/Rdr4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
       name: 'Terraria',
@@ -134,7 +134,7 @@ var gameList = [
         'GambarGame/Terraria3.jpg',
         'GambarGame/Terraria4.jpg',
       ],
-      isFavorite: false
+      isWishList: false
   ),
   Games(
       name: 'Strinova',
@@ -149,7 +149,7 @@ var gameList = [
         'GambarGame/Strinova3.jpg',
         'GambarGame/Strinova4.jpg',
       ],
-      isFavorite: false
+      isWishList: false
   ),
 
 ];

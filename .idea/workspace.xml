@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96b9c22f-d363-431e-96fa-026c23cb9127" name="Changes" comment="const modifier">
-      <change afterPath="$PROJECT_DIR$/lib/screens/FavoriteScreen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/ProfileScreen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/SearchScreen.dart" afterDir="false" />
+    <list default="true" id="96b9c22f-d363-431e-96fa-026c23cb9127" name="Changes" comment="Navigasi HomeScreen ke detailScreen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Widgets/HoverImage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Widgets/HoverImage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/games_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/games_data.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/gamesrr_model_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/gamesrr_model_data.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/HomeScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/HomeScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/layar_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/layar_detail.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,15 +61,15 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2pnZW7J2FtySySUqh6ciw7cNnc0" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Rafael",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Niory/Documents/GitHub/wisata_candi_rafael_eben_hart"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rafael&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Niory/Documents/GitHub/wisata_candi_rafael_eben_hart&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
@@ -99,12 +98,29 @@
       <option name="presentableId" value="Default" />
       <updated>1733661924514</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Navigasi HomeScreen ke detailScreen">
+      <option name="closed" value="true" />
+      <created>1733671238926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733671238926</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Navigasi HomeScreen ke detailScreen">
+      <option name="closed" value="true" />
+      <created>1733671443090</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733671443090</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Penghapusan method" />
     <MESSAGE value="const modifier" />
-    <option name="LAST_COMMIT_MESSAGE" value="const modifier" />
+    <MESSAGE value="Navigasi HomeScreen ke detailScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navigasi HomeScreen ke detailScreen" />
   </component>
 </project>
