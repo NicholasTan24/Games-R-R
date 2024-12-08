@@ -62,25 +62,19 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2pnZW7J2FtySySUqh6ciw7cNnc0" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Rafael",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Niory/Documents/GitHub/wisata_candi_rafael_eben_hart"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rafael&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Niory/Documents/GitHub/wisata_candi_rafael_eben_hart&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
-      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
