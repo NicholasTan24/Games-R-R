@@ -127,7 +127,7 @@ var gameList = [
       description: 'a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes.',
       genre: 'Action, Adventure, Indie, RPG',
       requirements: 'OS: Windows 7, 8/8.1, 10 | Processor: Dual Core 3.0 Ghz | Memory: 4GB | Hard Disk Space: 200MB | Video Card: 256mb Video Memory, capable of Shader Model 2.0+ | DirectX®: 9.0c or Greater',
-      imageAsset: 'GambarGame/Judul9.jpeg',
+      imageAsset: 'GambarGame/Judul9.jpg',
       preview: [
         'GambarGame/Terraria1.jpg',
         'GambarGame/Terraria2.jpg',
@@ -142,7 +142,7 @@ var gameList = [
       description: 'a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes.',
       genre: 'Action, Massively Multiplayer, Free To Play',
       requirements: 'OS *: Windows 7/8/10/11 64bit | Processor: Intel Core i5-7400 | Memory: 8 GB RAM | Graphics: Nvidia GeForce GTX 1050Ti,AMD Radeon R7 370 | DirectX: Version 11 | Network: Broadband Internet connection | Storage: 25 GB available space | Sound Card: DirectX 11 sound device',
-      imageAsset: 'GambarGame/Judul10.jpeg',
+      imageAsset: 'GambarGame/Judul10.jpg',
       preview: [
         'GambarGame/Strinova1.jpg',
         'GambarGame/Strinova2.jpg',

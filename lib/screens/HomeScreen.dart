@@ -121,31 +121,31 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
             //todo 7.Membuat gridview untuk menampilkan banyak game sekaligus
-            SizedBox(
-              height: 700,
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),//Mematikan fungsi scroll pada gridview dan hanya menggunakan SingleChildScrollView
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              child: SizedBox(
+                height: 700,
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),//Mematikan fungsi scroll pada gridview dan hanya menggunakan SingleChildScrollView
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: 6, //menampilkan 6 item dari gamelist
+                  itemBuilder: (context, index) {
+                    return  GestureDetector(
+                      onTap: (){
+                        _navigateToDetailScreen(gameList.skip(4).take(6).toList()[index]);//navigasi dari item gridview ke DetailScreen
+                      },
+                        child: SecondHover(games: gameList.skip(4).take(6).toList()[index].imageAsset)
+                        //(4) skip 4 item dan melanjutkan (6) item selanjutnya untuk ditampilkan
+                      //Menggunakan Costume widget untuk menambahkan efek
+                    );
+                  },
                 ),
-                itemCount: 6, //menampilkan 6 item dari gamelist
-                itemBuilder: (context, index) {
-                  return  GestureDetector(
-                    onTap: (){
-                      _navigateToDetailScreen(gameList.skip(4).take(6).toList()[index]);//navigasi dari item gridview ke DetailScreen
-                    },
-                      child: SecondHover(games: gameList.skip(4).take(6).toList()[index].imageAsset)
-                      //(4) skip 4 item dan melanjutkan (6) item selanjutnya untuk ditampilkan
-                    //Menggunakan Costume widget untuk menambahkan efek
-                  );
-                },
               ),
             ),
           ],
