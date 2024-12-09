@@ -13,15 +13,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String fullName = '';
   String userName = '';
   int favoriteCandiCount = 0;
-  final TextEditingController _passwordController = TextEditingController();
-  String _errorText = '';
-  bool _obscurePassword = true;
+  String password = '';
+
 
   // TODO 5. Implementasi fungsi signIn
   void signIn(){
-    // setState(() {
-    //   isSignedIn = !isSignedIn;
-    // });
     Navigator.pushNamed(context, '/SignInScreen');
   }
   // TODO 6. Implementasi fungsi signOut
@@ -82,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(width: MediaQuery.of(context).size.width / 3,
                       child: Row(
                         children: [
-                          Icon(Icons.lock, color: Colors.amber),
+                          Icon(Icons.perm_contact_calendar_outlined, color: Colors.blueAccent),
                           SizedBox(width: 8),
                           Text('Pengguna',style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)
@@ -132,6 +128,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(width: MediaQuery.of(context).size.width / 3,
                       child: Row(
                         children: [
+                          Icon(Icons.lock, color: Colors.black),
+                          SizedBox(width: 8),
+                          Text('Password',style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)
+                          )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(': $password', style: TextStyle(
+                          fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 4),
+                Divider(color: Colors.black),
+                SizedBox(height: 4),
+                Row(
+                  children: [
+                    SizedBox(width: MediaQuery.of(context).size.width / 3,
+                      child: Row(
+                        children: [
                           Icon(Icons.favorite, color: Colors.red),
                           SizedBox(width: 8),
                           Text('Favorit',style: TextStyle(
@@ -149,14 +168,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     if(isSignedIn) Icon(Icons.edit),
                   ],
                 ),
-                SizedBox(),
-
-                //TODO: 4. Buat ProfileActions yang berisi TextButton sign in/out
                 SizedBox(height: 4),
                 Divider(color: Colors.black),
                 SizedBox(height: 20),
+                //TODO: 4. Buat ProfileActions yang berisi TextButton sign in/out
                 isSignedIn ? TextButton(onPressed: signOut, child: Text('Sign Out'))
-                    : TextButton(onPressed: signIn, child: Text('Sign In', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold))),
+                    : TextButton(onPressed: signIn, child: Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
               ],
             ),
           )
