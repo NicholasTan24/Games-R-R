@@ -121,11 +121,12 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
             //todo 7.Membuat gridview untuk menampilkan banyak game sekaligus
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-              child: SizedBox(
-                height: 700,
+            SizedBox(
+                height: 760,
                 child: GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),//Mematikan fungsi scroll pada gridview dan hanya menggunakan SingleChildScrollView
@@ -147,7 +148,6 @@ class _HomescreenState extends State<Homescreen> {
                   },
                 ),
               ),
-            ),
           ],
         ),
       ),

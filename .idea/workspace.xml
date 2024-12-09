@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-
-    </list>
+    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,24 +23,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;GregoryNoelMarcello&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "RafaelEbenHart"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/NicholasTan24/Games-R-R.git&quot;,
-    &quot;accountId&quot;: &quot;6eeb1223-fc36-4214-84c1-a243e74e6307&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NicholasTan24/Games-R-R.git",
+    "accountId": "431b5c9f-bfc5-45be-8378-d3731413edfa"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
-
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2pyScS3rxnf47J9HhFhXRA7hK8Q" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Rafa",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Niory/Documents/DART/flutter/bin/cache/dart-sdk",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Videos\Tugas PAB NicoWijaya(2327240166)\Games-R-R\GambarGame" />
@@ -56,43 +74,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6f6299d2-4617-4dd4-85a5-7de668b2fa10" name="Changes" comment="" />
-      <created>1732533839291</created>
+      <changelist id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="" />
+      <created>1733736901862</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732533839291</updated>
+      <updated>1733736901862</updated>
     </task>
-    <task id="LOCAL-00001" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732637784670</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1732637784670</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Menambahkan Gambar Game">
-      <option name="closed" value="true" />
-      <created>1732637881474</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1732637881474</updated>
-    </task>
-
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-
   </component>
 </project>
