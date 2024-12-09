@@ -3,7 +3,7 @@ import 'package:games_rr/screens/FavoriteScreen.dart';
 import 'package:games_rr/screens/HomeScreen.dart';
 import 'package:games_rr/screens/profile_screen.dart';
 import 'package:games_rr/screens/SearchScreen.dart';
-import 'package:games_rr/screens/layar_detail.dart';
+import 'package:games_rr/widgets/CostumeBackGround.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,25 +22,6 @@ class MyApp extends StatelessWidget {
       ),
       home:const MainScreen(),
       //Homescreen()
-    );
-  }
-}
-class Gradient extends StatelessWidget {
-  final Widget child;
-  const Gradient({super.key, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [Color(0xFF0b1640),Colors.white,],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-          ),
-        ),
-        child: child,
-      ),
     );
   }
 }
@@ -66,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       //Todo: 2.body
-      body:  Gradient(child:_children[_currentIndex]),
+      body:  CostumeGradient(child: _children[_currentIndex]),
 
       //todo: 3.BottomNavigatorBar
       bottomNavigationBar: Theme(
@@ -94,16 +75,16 @@ class _MainScreenState extends State<MainScreen> {
                   label: "Search"),
               BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.favorite,
+                    Icons.star,
                     color: Colors.white,
                   ),
-                  label: "Favorite"),
+                  label: "WishList"),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.person,
                     color: Colors.white,
                   ),
-                  label: "Person"),
+                  label: "Profile"),
             ],
             selectedItemColor: Colors.white,
             unselectedItemColor: const Color(0xFF0b1640),
