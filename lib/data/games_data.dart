@@ -14,7 +14,7 @@ var gameList = [
       'GambarGame/Wukong3.jpg',
       'GambarGame/Wukong4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Call of Duty: Black Ops',
@@ -29,7 +29,7 @@ var gameList = [
       'GambarGame/cod3.jpg',
       'GambarGame/cod4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Silent Hill 2',
@@ -44,7 +44,7 @@ var gameList = [
       'GambarGame/SilentHill3.jpg',
       'GambarGame/SilentHill4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'WWE 2K24',
@@ -59,7 +59,7 @@ var gameList = [
       'GambarGame/wwe3.png',
       'GambarGame/wwe4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Ghost of Tsushima',
@@ -74,7 +74,7 @@ var gameList = [
       'GambarGame/Tsushima3.jpg',
       'GambarGame/Tsushima4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'It Takes Two',
@@ -89,7 +89,7 @@ var gameList = [
       'GambarGame/two3.jpg',
       'GambarGame/two4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Tekken 8',
@@ -104,7 +104,7 @@ var gameList = [
       'GambarGame/Tekken3.jpg',
       'GambarGame/Tekken4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
   ),
   Games(
     name: 'Red Dead Redemption 2',
@@ -119,7 +119,37 @@ var gameList = [
       'GambarGame/Rdr3.jpg',
       'GambarGame/Rdr4.jpg',
     ],
-    isFavorite: false
+    isWishList: false
+  ),
+  Games(
+      name: 'Terraria',
+      releaseDate: 'May 17, 2011',
+      description: 'a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes.',
+      genre: 'Action, Adventure, Indie, RPG',
+      requirements: 'OS: Windows 7, 8/8.1, 10 | Processor: Dual Core 3.0 Ghz | Memory: 4GB | Hard Disk Space: 200MB | Video Card: 256mb Video Memory, capable of Shader Model 2.0+ | DirectX®: 9.0c or Greater',
+      imageAsset: 'GambarGame/Judul9.jpg',
+      preview: [
+        'GambarGame/Terraria1.jpg',
+        'GambarGame/Terraria2.jpg',
+        'GambarGame/Terraria3.jpg',
+        'GambarGame/Terraria4.jpg',
+      ],
+      isWishList: false
+  ),
+  Games(
+      name: 'Strinova',
+      releaseDate: 'November 22, 2024',
+      description: 'a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes.',
+      genre: 'Action, Massively Multiplayer, Free To Play',
+      requirements: 'OS *: Windows 7/8/10/11 64bit | Processor: Intel Core i5-7400 | Memory: 8 GB RAM | Graphics: Nvidia GeForce GTX 1050Ti,AMD Radeon R7 370 | DirectX: Version 11 | Network: Broadband Internet connection | Storage: 25 GB available space | Sound Card: DirectX 11 sound device',
+      imageAsset: 'GambarGame/Judul10.jpg',
+      preview: [
+        'GambarGame/Strinova1.jpg',
+        'GambarGame/Strinova2.jpg',
+        'GambarGame/Strinova3.jpg',
+        'GambarGame/Strinova4.jpg',
+      ],
+      isWishList: false
   ),
 
 ];

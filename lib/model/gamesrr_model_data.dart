@@ -6,7 +6,7 @@ class Games{
   final String requirements;
   final String imageAsset;
   final List<String> preview;
-  bool isFavorite;
+  bool isWishList;
 
   Games({
     required this.name,
@@ -16,7 +16,7 @@ class Games{
     required this.requirements,
     required this.imageAsset,
     required this.preview,
-    this.isFavorite = false,
+    this.isWishList = false,
   });
-
+}
 
