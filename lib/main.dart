@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:games_rr/screens/FavoriteScreen.dart';
+import 'package:games_rr/screens/WishlistScreen.dart';
 import 'package:games_rr/screens/HomeScreen.dart';
 import 'package:games_rr/screens/profile_screen.dart';
 import 'package:games_rr/screens/SearchScreen.dart';
@@ -15,9 +15,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Games-R-R',
-      theme: ThemeData(scaffoldBackgroundColor: Colors.transparent,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: Color(0xFF0b1640),
+          iconTheme: IconThemeData(color: Color(0xff1E3E62)),
+          titleTextStyle: TextStyle(
+            color:  Colors.white,
+                fontSize: 28,
+            fontWeight: FontWeight.bold,
+          )
+        ),
+        scaffoldBackgroundColor: Colors.transparent,
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff1E3E62)),
         useMaterial3: true,
       ),
       home://ProfileScreen(),
@@ -40,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _children = [
     const Homescreen(),
     const SearchScreen(),
-    const Favoritescreen(),
+    const Wishlistscreen(),
     const ProfileScreen(),
   ];
 
