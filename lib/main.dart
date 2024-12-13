@@ -8,14 +8,7 @@ import 'package:games_rr/screens/SearchScreen.dart';
 import 'package:games_rr/widgets/CostumeBackGround.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes:{
-        '/':(context) => MainScreen(),
-        '/SignInScreen' : (context) => SignInscreen(),
-        '/SignUpScreen' : (context) => SignUpScreen(),
-        '/Profile' : (context) => SearchScreen(),
-      }));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,8 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Games-R-R',
+
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Color(0xFF0b1640),
           iconTheme: IconThemeData(color: Color(0xff1E3E62)),
           titleTextStyle: TextStyle(
@@ -37,12 +31,16 @@ class MyApp extends StatelessWidget {
           )
         ),
         scaffoldBackgroundColor: Colors.transparent,
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff1E3E62)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff1E3E62)),
         useMaterial3: true,
       ),
-      home://ProfileScreen(),
-       SignUpScreen(),
-      //Homescreen()
+      home:const MainScreen(),
+        initialRoute: '/',
+        routes:{
+          '/SignInScreen' : (context) => SignInscreen(),
+          '/SignUpScreen' : (context) => SignUpScreen(),
+          '/Profile' : (context) => const SearchScreen(),
+        }
     );
   }
 }
@@ -63,13 +61,11 @@ class _MainScreenState extends State<MainScreen> {
     const Wishlistscreen(),
     const ProfileScreen(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //Todo: 2.body
-      body:  CostumeGradient(child: _children[_currentIndex]),
-
+      body:CostumeGradient(child: _children[_currentIndex]),
       //todo: 3.BottomNavigatorBar
       bottomNavigationBar: Theme(
           data: Theme.of(context).copyWith(canvasColor: const Color(0xff1E3E62)),
