@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="MemperBaruhi SignIn&amp;SignUp" />
+    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="MemperBaruhi SignIn&amp;SignUp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734096859695</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MemperBaruhi SignIn&amp;SignUp">
+      <option name="closed" value="true" />
+      <created>1734097261177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734097261177</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
