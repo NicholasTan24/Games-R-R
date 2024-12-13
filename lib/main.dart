@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:games_rr/screens/FavoriteScreen.dart';
 import 'package:games_rr/screens/HomeScreen.dart';
+import 'package:games_rr/screens/Sign_In.dart';
+import 'package:games_rr/screens/Sign_Up.dart';
 import 'package:games_rr/screens/profile_screen.dart';
 import 'package:games_rr/screens/SearchScreen.dart';
 import 'package:games_rr/widgets/CostumeBackGround.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes:{
+        '/':(context) => MainScreen(),
+        '/SignInScreen' : (context) => SignInscreen(),
+        '/SignUpScreen' : (context) => SignUpScreen(),
+        '/Profile' : (context) => SearchScreen(),
+      }));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +30,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home://ProfileScreen(),
-      const MainScreen(),
+       SignUpScreen(),
       //Homescreen()
     );
   }
