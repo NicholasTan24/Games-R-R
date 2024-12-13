@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/Sign_In.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/Sign_In.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/Sign_Up.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/Sign_Up.dart" afterDir="false" />
-    </list>
+    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="MemperBaruhi SignIn&amp;SignUp" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +82,19 @@
       <option name="presentableId" value="Default" />
       <updated>1733736901862</updated>
     </task>
+    <task id="LOCAL-00001" summary="MemperBaruhi SignIn&amp;SignUp">
+      <option name="closed" value="true" />
+      <created>1734096710107</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734096710107</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="MemperBaruhi SignIn&amp;SignUp" />
+    <option name="LAST_COMMIT_MESSAGE" value="MemperBaruhi SignIn&amp;SignUp" />
   </component>
 </project>
