@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:games_rr/widgets/CostumeBackGround.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../model/gamesrr_model_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -13,6 +14,46 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+
+  bool isFavorite = false;
+  bool isSignedIn = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkSignInStatus();
+    _loadFavoriteStatus();
+  }
+  // Memeriksa status sign in
+  void _checkSignInStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool signedIn = prefs.getBool('isSignedIn') ?? false;
+    setState(() {
+      isSignedIn = signedIn;
+    });
+  }
+  void _loadFavoriteStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool favorite = prefs.getBool('favorite_${widget.games.name}') ?? false;
+    setState(() {
+      isFavorite = favorite;
+    });
+  }
+  Future<void> _toggleFavorite() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Memeriksa apakah pengguna sudah sign in
+    if(!isSignedIn) {
+      // Jika belum sign in, arahkan ke SignInScreen
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.pushReplacementNamed(context, '/SignInScreen');
+      });
+      return;
+    }
+    bool favoriteStatus = !isFavorite;
+    prefs.setBool('favorite_${widget.games.name}',favoriteStatus);
+  }
+
   @override
   Widget build(BuildContext context) {
     return CostumeGradient(
@@ -76,7 +117,10 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ),
                         IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.star_border))
+                            onPressed: () {
+                              _toggleFavorite();
+                            },
+                            icon: Icon(Icons.star_border))
                       ],
                     ),
                     //gambar gambarnya

@@ -151,7 +151,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(width: MediaQuery.of(context).size.width / 3,
                       child: Row(
                         children: [
-                          Icon(Icons.favorite, color: Colors.red),
+                          Icon(Icons.star, color: Colors.yellow),
                           SizedBox(width: 8),
                           Text('Favorit',style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)

@@ -16,7 +16,7 @@ class _SignInscreenState extends State<SignInscreen> {
 
   final TextEditingController _passwordController = TextEditingController();
 
-  String _errorText = ' ';
+  String _errorText = '';
   bool _isSignedIn = false;
   bool _obscurePassword = true;
 
@@ -121,8 +121,8 @@ class _SignInscreenState extends State<SignInscreen> {
                         },
                         icon: Icon(
                           _obscurePassword
-                              ? Icons.visibility_off
-                              : Icons.visibility,
+                          ? Icons.visibility_off
+                          : Icons.visibility,
                         ),
                       ),
                     ),
