@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -9,25 +11,71 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   // TODO: 1.Deklarasikan variabel yang dibutuhkan
+  // TODO: 1.Deklarasikan variabel yang dibutuhkan
   bool isSignedIn = false;
   String fullName = '';
   String userName = '';
-  int favoriteCandiCount = 0;
+  int wishListCount = 0;
   String password = '';
 
+  @override
+  void initState() {
+    super.initState();
+  }
 
-  // TODO 5. Implementasi fungsi signIn
-  void signIn(){
-    Navigator.pushNamed(context, '/SignInScreen');
+  // mengmabil data dari signUpScreen
+  Future<void> _loadUserData() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // mengambil key untuk melakukan dekripsi
+    final String? keyBase64 = prefs.getString('key');
+    final String? ivBase64 = prefs.getString('iv');
+
+
+    if (keyBase64 != null && ivBase64 != null) {
+      final key = encrypt.Key.fromBase64(keyBase64);
+      final iv = encrypt.IV.fromBase64(ivBase64);
+      final encrypter = encrypt.Encrypter(encrypt.AES(key));
+
+      // mengambil data yang dienkripsi
+      final String? encryptedFullName = prefs.getString('fullname');
+      final String? encryptedUserName = prefs.getString('username');
+      final String? encryptedPassword = prefs.getString('password');
+
+      if (encryptedFullName != null && encryptedUserName != null && encryptedPassword != null) {
+        // melakukan deskripsi data
+        final decryptedFullName = encrypter.decrypt64(encryptedFullName, iv: iv);
+        final decryptedUserName = encrypter.decrypt64(encryptedUserName, iv: iv);
+        final decryptedPassword = encrypter.decrypt64(encryptedPassword, iv: iv);
+
+        setState(() {
+          fullName = decryptedFullName;
+          userName = decryptedUserName;
+          password = decryptedPassword;
+        });
+      }
+    }
   }
-  // TODO 6. Implementasi fungsi signOut
-  void signOut(){
-    setState(() {
-      isSignedIn = !isSignedIn;
-    });
-  }
+
   @override
   Widget build(BuildContext context) {
+    final bool? signedInStatus = ModalRoute.of(context)?.settings.arguments as bool?;
+    isSignedIn = signedInStatus ?? false;//mengambil nilai true dari signInScreen
+
+    if (isSignedIn) {
+      _loadUserData(); // menjalankan proses data pengguna jika sudah login
+    }
+
+    void signIn() {
+      Navigator.pushNamed(context, '/SignInScreen');
+    }
+
+    void signOut() {
+      setState(() {
+        isSignedIn = false;
+      });
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -40,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                //TODO: 2. Buat bagian ProfileHeader yang berisi gambar profil
+                // ProfileHeader
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
@@ -53,127 +101,126 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             border: Border.all(color: Colors.black38, width: 2),
                             shape: BoxShape.circle,
                           ),
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 50,
                             backgroundImage:
-                            AssetImage('images/placeholder_image.png'),
+                            AssetImage('GambarGame/placeholder.png'),
                           ),
                         ),
                         if (isSignedIn)
                           IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.camera_alt,
-                                  color: Colors.black))
+                            onPressed: () {},
+                            icon: const Icon(Icons.camera_alt, color: Colors.black),
+                          ),
                       ],
                     ),
                   ),
                 ),
-                //TODO: 3. Buat bagian ProfileInfo yang berisi info profil
-                // Baris Pengguna
-                SizedBox(height: 4),
-                Divider(color: Colors.black),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
+                const Divider(color: Colors.black),
+                const SizedBox(height: 4),
+
+                // Profile Info - Pengguna
                 Row(
                   children: [
-                    SizedBox(width: MediaQuery.of(context).size.width / 3,
-                      child: Row(
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: const Row(
                         children: [
                           Icon(Icons.perm_contact_calendar_outlined, color: Colors.blueAccent),
                           SizedBox(width: 8),
-                          Text('Pengguna',style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)
-                          )
+                          Text('Pengguna', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
                     Expanded(
-                      child: Text(': $userName', style: TextStyle(
-                          fontSize: 18),
-                      ),
+                      child: Text(': $userName', style: const TextStyle(fontSize: 18)),
                     ),
-                    if(isSignedIn) Icon(Icons.edit),
+                    if (isSignedIn) const Icon(Icons.edit),
                   ],
                 ),
-                // Baris Nama
-                SizedBox(height: 4),
-                Divider(color: Colors.black),
-                SizedBox(height: 4),
+
+                const SizedBox(height: 4),
+                const Divider(color: Colors.black),
+                const SizedBox(height: 4),
+
+                // Profile Info - Nama
                 Row(
                   children: [
-                    SizedBox(width: MediaQuery.of(context).size.width / 3,
-                      child: Row(
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: const Row(
                         children: [
                           Icon(Icons.person, color: Colors.blue),
                           SizedBox(width: 8),
-                          Text('Nama',style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)
-                          )
+                          Text('Nama', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
                     Expanded(
-                      child: Text(': $fullName', style: TextStyle(
-                          fontSize: 18),
-                      ),
+                      child: Text(': $fullName', style: const TextStyle(fontSize: 18)),
                     ),
-                    if(isSignedIn) Icon(Icons.edit),
+                    if (isSignedIn) const Icon(Icons.edit),
                   ],
                 ),
-                // Baris Favorit
-                SizedBox(height: 4),
-                Divider(color: Colors.black),
-                SizedBox(height: 4),
+
+                const SizedBox(height: 4),
+                const Divider(color: Colors.black),
+                const SizedBox(height: 4),
+
+                // Profile Info - Password
                 Row(
                   children: [
-                    SizedBox(width: MediaQuery.of(context).size.width / 3,
-                      child: Row(
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: const Row(
                         children: [
                           Icon(Icons.lock, color: Colors.black),
                           SizedBox(width: 8),
-                          Text('Password',style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)
-                          )
+                          Text('Password', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
                     Expanded(
-                      child: Text(': $password', style: TextStyle(
-                          fontSize: 18),
-                      ),
+                      child: Text( (':' + '*' * password.length), style: const TextStyle(fontSize: 18)),
                     ),
                   ],
                 ),
-                SizedBox(height: 4),
-                Divider(color: Colors.black),
-                SizedBox(height: 4),
+
+                const SizedBox(height: 4),
+                const Divider(color: Colors.black),
+                const SizedBox(height: 4),
+
+                // Profile Info - Favorit
                 Row(
                   children: [
-                    SizedBox(width: MediaQuery.of(context).size.width / 3,
-                      child: Row(
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 3,
+                      child: const Row(
                         children: [
                           Icon(Icons.star, color: Colors.yellow),
                           SizedBox(width: 8),
-                          Text('Favorit',style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)
-                          )
+                          Text('WishList', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
                       ),
                     ),
-
                     Expanded(
-                      child: Text(': $favoriteCandiCount', style: TextStyle(
-                          fontSize: 18),
-                      ),
+                      child: Text(': $wishListCount', style: const TextStyle(fontSize: 18)),
                     ),
-                    if(isSignedIn) Icon(Icons.edit),
                   ],
                 ),
-                SizedBox(height: 4),
-                Divider(color: Colors.black),
-                SizedBox(height: 20),
-                //TODO: 4. Buat ProfileActions yang berisi TextButton sign in/out
-                isSignedIn ? TextButton(onPressed: signOut, child: Text('Sign Out'))
-                    : TextButton(onPressed: signIn, child: Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+
+                const SizedBox(height: 4),
+                const Divider(color: Colors.black),
+                const SizedBox(height: 20),
+
+                // Profile Actions
+                isSignedIn
+                    ? TextButton(onPressed: signOut, child: const Text('Sign Out'))
+                    : TextButton(
+                  onPressed: signIn,
+                  child: const Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           )

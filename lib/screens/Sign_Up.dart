@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
+import 'package:games_rr/Widgets/CostumeBackGround.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
 
@@ -18,7 +18,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   String _errorText = '';
-
   bool _obscurePassword = true;
 
   //TODO: 2.Membuat method _signUp
@@ -76,64 +75,66 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // TODO: 2. Pasang AppBar
-      appBar: AppBar(title: Text('Sign Up')),
-      // TODO: 3. Pasang body
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Form(
-                child: Column(
-                  // TODO: 4. Atur mainAxisAlignment dan crossAxisAlignment
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      controller: _fullnameController,
-                      decoration: InputDecoration(
-                        labelText: "Nama Lengkap Pengguna",
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    // TODO: 6. Pasang TextFormField Nama Pengguna
-                    SizedBox(height: 20),
-                    TextFormField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        labelText: "Nama Pengguna",
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    // TODO: 7. Pasang TextFormField Kata Sandi
-                    SizedBox(height: 20),
-                    TextFormField(
-                      controller: _passwordController,
-                      decoration: InputDecoration(
-                        labelText: "Kata Sandi",
-                        errorText: _errorText.isNotEmpty ? _errorText : null,
-                        border: OutlineInputBorder(),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _obscurePassword = ! _obscurePassword;
-                            });
-                          },
-                          icon: Icon(
-                            _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                          ),
+    return CostumeGradient(
+      child: Scaffold(
+        // TODO: 2. Pasang AppBar
+        appBar: AppBar(title: Text('Sign Up')),
+        // TODO: 3. Pasang body
+        body: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Form(
+                  child: Column(
+                    // TODO: 4. Atur mainAxisAlignment dan crossAxisAlignment
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                        controller: _fullnameController,
+                        decoration: InputDecoration(
+                          labelText: "Nama Lengkap Pengguna",
+                          border: OutlineInputBorder(),
                         ),
                       ),
-                      obscureText: _obscurePassword,
-                    ),
-                    // TODO: 8. Pasang ElevatedButton Sign Up
-                    SizedBox(height: 20),
-                    ElevatedButton(onPressed: () {
-                      _signUp();
-                    }, child: Text('Sign Up')),
-                  ],
-                )),
+                      // TODO: 6. Pasang TextFormField Nama Pengguna
+                      SizedBox(height: 20),
+                      TextFormField(
+                        controller: _usernameController,
+                        decoration: InputDecoration(
+                          labelText: "Nama Pengguna",
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      // TODO: 7. Pasang TextFormField Kata Sandi
+                      SizedBox(height: 20),
+                      TextFormField(
+                        controller: _passwordController,
+                        decoration: InputDecoration(
+                          labelText: "Kata Sandi",
+                          errorText: _errorText.isNotEmpty ? _errorText : null,
+                          border: OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _obscurePassword = ! _obscurePassword;
+                              });
+                            },
+                            icon: Icon(
+                              _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                            ),
+                          ),
+                        ),
+                        obscureText: _obscurePassword,
+                      ),
+                      // TODO: 8. Pasang ElevatedButton Sign Up
+                      SizedBox(height: 20),
+                      ElevatedButton(onPressed: () {
+                        _signUp();
+                      }, child: Text('Sign Up')),
+                    ],
+                  )),
+            ),
           ),
         ),
       ),
