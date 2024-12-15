@@ -106,7 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.brown[200],
+                        color: Colors.lime,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
