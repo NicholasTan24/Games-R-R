@@ -13,7 +13,7 @@ class Wishlistscreen extends StatefulWidget {
 
 class _WishlistscreenState extends State<Wishlistscreen> {
   bool isSignedIn = false;
-  List<String> wishlistGames = []; // Daftar nama game di wishlist user
+  List<String> wishlistGames = [];// Daftar nama game di wishlist user
 
   @override
   void initState() {

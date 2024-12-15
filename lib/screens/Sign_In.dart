@@ -95,7 +95,7 @@ class _SignInscreenState extends State<SignInscreen> {
               padding: const EdgeInsets.all(16),
               child: Form(
                 child: Column(
-                  //TODO: 4. Atur mainAxisAligment dan ccrossAxisAligment
+                  //TODO: 4. Atur mainAxisAligment dan crossAxisAlignment
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -103,6 +103,8 @@ class _SignInscreenState extends State<SignInscreen> {
                     TextFormField(
                       controller: _usernameController,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         labelText: "Nama Pengguna",
                         border: OutlineInputBorder(),
                       ),
@@ -112,6 +114,8 @@ class _SignInscreenState extends State<SignInscreen> {
                     TextFormField(
                       controller: _passwordController,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         labelText: "Kata Sandi",
                         errorText: _errorText.isNotEmpty ? _errorText : null,
                         border: OutlineInputBorder(),
@@ -148,7 +152,7 @@ class _SignInscreenState extends State<SignInscreen> {
                           TextSpan(
                             text: 'Daftar di sini. ',
                             style: TextStyle(
-                                color:  Colors.blue,  //warna untuk teks yang bisa ditekan
+                                color:  Colors.red,  //warna untuk teks yang bisa ditekan
                                 decoration: TextDecoration.underline,
                                 fontSize: 16
                             ),
