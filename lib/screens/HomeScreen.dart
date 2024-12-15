@@ -30,7 +30,7 @@ class _HomescreenState extends State<Homescreen> {
       appBar: AppBar(
         title: const Text("Home Screen"),
       ),
-      //todo 2.Membuat singlechidlscrollview u
+      //todo 2.Membuat singlechidlscrollview
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -121,7 +121,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             //todo 7.Membuat gridview untuk menampilkan banyak game sekaligus
