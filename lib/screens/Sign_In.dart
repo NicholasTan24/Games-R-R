@@ -65,7 +65,7 @@ class _SignInscreenState extends State<SignInscreen> {
             });
             //sign in berhasil, navigasikan ke layar utama
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              Navigator.pushReplacementNamed(context, '/Profile',arguments: true);
+              Navigator.pushReplacementNamed(context, '/',arguments: true);
             });
             print('Sign in succeeded');
           } else {

@@ -15,14 +15,14 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
 
-  bool isFavorite = false;
+  bool isWishlist = false;
   bool isSignedIn = false;
 
   @override
   void initState() {
     super.initState();
     _checkSignInStatus();
-    _loadFavoriteStatus();
+    _loadWishListStatus(); // Pastikan status wishlist dimuat sebelum tampilan ditampilkan
   }
   // Memeriksa status sign in
   void _checkSignInStatus() async {
@@ -31,27 +31,49 @@ class _DetailScreenState extends State<DetailScreen> {
     setState(() {
       isSignedIn = signedIn;
     });
+    // Jika sudah login, perbarui status wishlist
+    if (signedIn) {
+      _loadWishListStatus();  // Memuat ulang status wishlist
+    }
   }
-  void _loadFavoriteStatus() async {
+  // Memuat status wishlist dari SharedPreferences
+  void _loadWishListStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool favorite = prefs.getBool('favorite_${widget.games.name}') ?? false;
+    bool wishList = prefs.getBool('WishList_${widget.games.name}') ?? false;
     setState(() {
-      isFavorite = favorite;
+      isWishlist = wishList; // Mengupdate status wishlist
     });
   }
-  Future<void> _toggleFavorite() async {
+  // Mengubah status wishlist
+  Future<void> _toggleWishList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     // Memeriksa apakah pengguna sudah sign in
-    if(!isSignedIn) {
+    if (!isSignedIn) {
       // Jika belum sign in, arahkan ke SignInScreen
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Navigator.pushReplacementNamed(context, '/SignInScreen');
       });
       return;
     }
-    bool favoriteStatus = !isFavorite;
-    prefs.setBool('favorite_${widget.games.name}',favoriteStatus);
+
+    bool wishListStatus = !isWishlist;
+    // Menyimpan status wishlist di SharedPreferences
+    await prefs.setBool('WishList_${widget.games.name}', wishListStatus); // Pastikan penyimpanan selesai
+    // Menambahkan atau menghapus game dari daftar wishlist
+    List<String> wishlist = prefs.getStringList('wishlist') ?? [];
+    if (wishListStatus) {
+      wishlist.add(widget.games.name);  // Menambahkan game ke wishlist
+    } else {
+      wishlist.remove(widget.games.name);  // Menghapus game dari wishlist
+    }
+    // Menyimpan ulang daftar wishlist yang diperbarui
+    await prefs.setStringList('wishlist', wishlist);
+
+    // Update status wishList
+    setState(() {
+      isWishlist = wishListStatus;
+    });
   }
 
   @override
@@ -118,9 +140,12 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                         IconButton(
                             onPressed: () {
-                              _toggleFavorite();
+                              _toggleWishList();
                             },
-                            icon: Icon(Icons.star_border))
+                            icon: Icon(isWishlist ? Icons.star : Icons.star_border,
+                            color: isWishlist ? Colors.yellow : Colors.grey,
+                            )
+                        )
                       ],
                     ),
                     //gambar gambarnya
