@@ -56,6 +56,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
       }
     }
   }
+  Future<void> signOut() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString(userName,'');
+    await prefs.setString(password,'');
+    await prefs.setString(password,'');
+    setState(() {
+      isSignedIn =false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +79,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       Navigator.pushNamed(context, '/SignInScreen');
     }
 
-    void signOut() {
-      setState(() {
-        isSignedIn = false;
-      });
-    }
 
     return Scaffold(
       body: Stack(
@@ -127,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: MediaQuery.of(context).size.width / 3,
                       child: const Row(
                         children: [
-                          Icon(Icons.perm_contact_calendar_outlined, color: Colors.blueAccent),
+                          Icon(Icons.person_search, color: Colors.lime),
                           SizedBox(width: 8),
                           Text('Pengguna', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
@@ -151,7 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       width: MediaQuery.of(context).size.width / 3,
                       child: const Row(
                         children: [
-                          Icon(Icons.person, color: Colors.blue),
+                          Icon(Icons.person, color: Colors.orange),
                           SizedBox(width: 8),
                           Text('Nama', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                         ],
@@ -182,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Expanded(
-                      child: Text( (':' + '*' * password.length), style: const TextStyle(fontSize: 18)),
+                      child: Text( (': ' + '*' * password.length), style: const TextStyle(fontSize: 18)),
                     ),
                   ],
                 ),
@@ -216,7 +220,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                 // Profile Actions
                 isSignedIn
-                    ? TextButton(onPressed: signOut, child: const Text('Sign Out'))
+                    ? TextButton(onPressed: signOut, child: const Text('Sign Out',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)))
                     : TextButton(
                   onPressed: signIn,
                   child: const Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),

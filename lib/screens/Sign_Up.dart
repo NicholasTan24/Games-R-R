@@ -93,6 +93,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _fullnameController,
                         decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
                           labelText: "Nama Lengkap Pengguna",
                           border: OutlineInputBorder(),
                         ),
@@ -102,6 +104,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _usernameController,
                         decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
                           labelText: "Nama Pengguna",
                           border: OutlineInputBorder(),
                         ),
@@ -111,6 +115,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       TextFormField(
                         controller: _passwordController,
                         decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
                           labelText: "Kata Sandi",
                           errorText: _errorText.isNotEmpty ? _errorText : null,
                           border: OutlineInputBorder(),
