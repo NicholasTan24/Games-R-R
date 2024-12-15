@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
 
@@ -11,12 +13,13 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   // TODO: 1.Deklarasikan variabel yang dibutuhkan
-  // TODO: 1.Deklarasikan variabel yang dibutuhkan
   bool isSignedIn = false;
   String fullName = '';
   String userName = '';
   int wishListCount = 0;
   String password = '';
+  String profilePicture ='GambarGame/placeholder.png';
+  final picker = ImagePicker();
 
   @override
   void initState() {
@@ -66,6 +69,49 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
+  Future<void> _getImage(ImageSource source) async {
+    final pickedFile = await picker.pickImage(source: source);
+    if (pickedFile != null) {
+      setState(() {
+        profilePicture = pickedFile.path;
+      });
+    }
+  }
+
+  void _showPicker() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const ListTile(
+                title: Text(
+                  'Image Source',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )),
+            ListTile(
+              leading: const Icon(Icons.photo_library),
+              title: const Text('Gallery'),
+              onTap: () {
+                Navigator.of(context).pop();
+                _getImage(ImageSource.gallery); // Pilih dari galeri
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_camera),
+              title: const Text('Camera'),
+              onTap: () {
+                Navigator.of(context).pop();
+                _getImage(ImageSource.camera); // Ambil gambar dengan kamera
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool? signedInStatus = ModalRoute.of(context)?.settings.arguments as bool?;
@@ -105,15 +151,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             border: Border.all(color: Colors.black38, width: 2),
                             shape: BoxShape.circle,
                           ),
-                          child: const CircleAvatar(
+                          child: CircleAvatar(
                             radius: 50,
                             backgroundImage:
-                            AssetImage('GambarGame/placeholder.png'),
+                            AssetImage(profilePicture),
                           ),
                         ),
                         if (isSignedIn)
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              _showPicker();
+                            },
                             icon: const Icon(Icons.camera_alt, color: Colors.black),
                           ),
                       ],
