@@ -47,7 +47,6 @@ class _DetailScreenState extends State<DetailScreen> {
   // Mengubah status wishlist
   Future<void> _toggleWishList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
     // Memeriksa apakah pengguna sudah sign in
     if (!isSignedIn) {
       // Jika belum sign in, arahkan ke SignInScreen
@@ -106,7 +105,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.lime,
+                        color: Color(0xFF0b1640),
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
@@ -115,6 +114,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           },
                           icon: const Icon(
                             Icons.arrow_back,
+                            color: Colors.white,
                           )),
                     ),
                   )
