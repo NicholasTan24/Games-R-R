@@ -11,90 +11,87 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  //todo 1.deklarasi variabel
-  List<Games> _filteredGames = gameList;
-  String _seaarchQuer = '';
   final TextEditingController _searchController = TextEditingController();
+  List<Games> _filteredGameList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _searchController.addListener(_filterGameList);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _searchController.removeListener(_filterGameList);
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _filterGameList() {
+    String query = _searchController.text.toLowerCase();
+    setState(() {
+      if (query.isEmpty) {
+        _filteredGameList = [];
+      } else {
+        _filteredGameList = gameList.where((games) {
+          return games.name.toLowerCase().contains(query);
+        }).toList();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //todo 2.appbar pencarian game
       appBar: AppBar(
-        title: const Text("Game Search"),
+        title: const Text('Search'),
       ),
-      //todo 3.body & column
       body: Column(
         children: [
-          //todo 4.textfeild
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16.0),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white),
-              child: const TextField(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.deepPurple[50],
+              ),
+              child: TextField(
+                controller: _searchController,
                 autofocus: false,
-                decoration: InputDecoration(
-                  hintText: "Cari Games",
-                  prefixIcon: Icon(Icons.search),
-                  border: InputBorder.none,
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xFF0b1640),
-                    ),
-                  ),
-                  contentPadding:
-                  EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                ),
+                decoration: const InputDecoration(
+                    hintText: 'Cari Games ...',
+                    prefixIcon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple)),
+                    contentPadding:
+                    EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
               ),
             ),
           ),
-          //todo 5.listview
           Expanded(
-            child: ListView.builder(
-                itemCount: _filteredGames.length,
+              child: ListView.builder(
+                itemCount: _filteredGameList.length,
                 itemBuilder: (context, index) {
-                  final Games = _filteredGames[index];
-                  return GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen(games: gameList[index])));
-                    },
-                    child: Card(
-                      color: Color(0xff1E3E62),
-                      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            width: 100,
-                            height: 100,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                Games.imageAsset,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(Games.name,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white,)),
-                                const SizedBox(height: 4,),
-                                Text(Games.genre,style: TextStyle(color: Colors.white,),),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                  Games game = _filteredGameList[index];
+                  return ListTile(
+                    title: Text(game.name),
+                    subtitle: Text(game.requirements),
+                    leading: Image.asset(
+                      game.imageAsset,
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
                     ),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return DetailScreen(games: game);
+                      }));
+                    },
                   );
-                }),
-          )
+                },
+              )),
         ],
       ),
     );
