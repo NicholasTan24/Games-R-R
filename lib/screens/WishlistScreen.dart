@@ -6,29 +6,19 @@ import '../model/gamesrr_model_data.dart';
 
 class Wishlistscreen extends StatefulWidget {
   const Wishlistscreen({super.key});
-
   @override
   State<Wishlistscreen> createState() => _WishlistscreenState();
 }
 
 class _WishlistscreenState extends State<Wishlistscreen> {
   bool isSignedIn = false;
-  List<String> wishlistGames = [];// Daftar nama game di wishlist user
+  List<Games>wishlistGames = [];// Daftar nama game di wishlist user
 
   @override
   void initState() {
     super.initState();
     _checkSignInStatus();
   }//init state yang akan menyiapkan method checkSingInStatus untuk cek status signIn user
-
-  void _navigateToDetailScreen(Games game) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => DetailScreen(games: game),
-      ),
-    );
-  }//method untuk navigasi ke detail screen jika gambar game di tap
 
   void _checkSignInStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -46,7 +36,9 @@ class _WishlistscreenState extends State<Wishlistscreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String>? savedGames = prefs.getStringList('wishlist') ?? [];
     setState(() {
-      wishlistGames = savedGames;
+      wishlistGames = gameList.where(
+          (Games) => savedGames.contains(Games.name)
+      ).toList();
     });
   }
 
@@ -108,17 +100,17 @@ class _WishlistscreenState extends State<Wishlistscreen> {
                         ),
                         itemCount: wishlistGames.length,
                         itemBuilder: (context, index) {
-                String gameName = wishlistGames[index];
-                // Mengambil game berdasarkan nama dari gameList
-                Games game = gameList.firstWhere((g) => g.name == gameName);
+                           Games games = wishlistGames[index];
                 return GestureDetector(
                   onTap: () {
-                    _navigateToDetailScreen(gameList[index]);//navigasi ke detail screen jika gamabr ditekan
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) =>
+                            DetailScreen(games: games)));
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
-                      game.imageAsset, // Gambar game
+                      games.imageAsset, // Gambar game
                       fit: BoxFit.cover,
                     ),
                   ),
