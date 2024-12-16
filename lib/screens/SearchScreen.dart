@@ -60,7 +60,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 controller: _searchController,
                 autofocus: false,
                 decoration: const InputDecoration(
-                    hintText: 'Cari Games ...',
+                    hintText: 'Cari Games',
                     prefixIcon: Icon(Icons.search),
                     border: InputBorder.none,
                     focusedBorder: OutlineInputBorder(
@@ -70,28 +70,51 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
           ),
+          //todo 5.listview
           Expanded(
-              child: ListView.builder(
+            child: ListView.builder(
                 itemCount: _filteredGameList.length,
                 itemBuilder: (context, index) {
-                  Games game = _filteredGameList[index];
-                  return ListTile(
-                    title: Text(game.name),
-                    subtitle: Text(game.requirements),
-                    leading: Image.asset(
-                      game.imageAsset,
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return DetailScreen(games: game);
-                      }));
+                  final Games = _filteredGameList[index];
+                  return GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen(games: Games)));//navigasi ke detailScreen
                     },
+                    child: Card(
+                      color: Color(0xff1E3E62),
+                      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            width: 100,
+                            height: 100,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                Games.imageAsset,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(Games.name,style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white,)),
+                                const SizedBox(height: 4,),
+                                Text(Games.genre,style: TextStyle(color: Colors.white,),),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   );
-                },
-              )),
+                }),
+          )
         ],
       ),
     );
