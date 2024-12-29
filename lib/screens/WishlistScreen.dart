@@ -95,17 +95,18 @@ class _WishlistscreenState extends State<Wishlistscreen> {
                         padding: const EdgeInsets.all(8.0),
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
                         ),
                         itemCount: wishlistGames.length,
                         itemBuilder: (context, index) {
-                           Games games = wishlistGames[index];
+                           Games games = wishlistGames[index];//Memastikan Setiap index yang telah masuk ke WishList sesuai dengan index Games
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context) =>
-                            DetailScreen(games: games)));
+                            DetailScreen(games: games)//Navigasi ke DetailScreen sesuai dengan value index yang telah di inisialisasi
+                    ));
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),

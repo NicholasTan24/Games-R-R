@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/WishlistScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/WishlistScreen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/layar_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/layar_detail.dart" afterDir="false" />
@@ -63,7 +63,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Android Studio/PAB1-IF3A-main/wisata_candi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Niory/Documents/GitHub/Games-R-R&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }

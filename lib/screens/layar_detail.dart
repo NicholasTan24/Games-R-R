@@ -17,13 +17,16 @@ class _DetailScreenState extends State<DetailScreen> {
 
   bool isWishlist = false;
   bool isSignedIn = false;
+  String mainImage = ''; // Menyimpan gambar utama
 
   @override
   void initState() {
     super.initState();
     _checkSignInStatus();
-    _loadWishListStatus(); // Pastikan status wishlist dimuat sebelum tampilan ditampilkan
+    _loadWishListStatus(); // memastikan status wishlist dimuat sebelum tampilan ditampilkan
+    mainImage = widget.games.imageAsset; // Menetapkan gambar utama awal
   }
+
   // Memeriksa status sign in
   void _checkSignInStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,6 +39,7 @@ class _DetailScreenState extends State<DetailScreen> {
       _loadWishListStatus();  // Memuat ulang status wishlist
     }
   }
+
   // Memuat status wishlist dari SharedPreferences
   void _loadWishListStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -44,6 +48,7 @@ class _DetailScreenState extends State<DetailScreen> {
       isWishlist = wishList; // Mengupdate status wishlist
     });
   }
+
   // Mengubah status wishlist
   Future<void> _toggleWishList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -75,6 +80,13 @@ class _DetailScreenState extends State<DetailScreen> {
     });
   }
 
+  // Fungsi untuk mengganti gambar utama dengan gambar preview
+  void _updateMainImage(String imageUrl) {
+    setState(() {
+      mainImage = imageUrl; // Mengubah gambar utama
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return CostumeGradient(
@@ -82,27 +94,27 @@ class _DetailScreenState extends State<DetailScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              //tampilan besarnya
+              // Tampilan besarnya
               Stack(
-                //padding gambar
+                // Padding gambar
                 children: [
-                  //padding image
+                  // Padding image
                   Padding(
                     padding: const EdgeInsets.all(8),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
-                        widget.games.imageAsset,
+                        mainImage, // Menggunakan mainImage untuk menampilkan gambar utama
                         width: double.infinity,
                         height: 300,
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  //padding back button
+                  // Padding back button
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
                     child: Container(
                       decoration: BoxDecoration(
                         color: Color(0xFF0b1640),
@@ -120,14 +132,14 @@ class _DetailScreenState extends State<DetailScreen> {
                   )
                 ],
               ),
-      
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 10),
-                    // info atas(nama game dan tombol favorit)
+                    // Info atas (nama game dan tombol favorit)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -143,12 +155,12 @@ class _DetailScreenState extends State<DetailScreen> {
                               _toggleWishList();
                             },
                             icon: Icon(isWishlist ? Icons.star : Icons.star_border,
-                            color: isWishlist ? Colors.yellow : Colors.grey,
+                              color: isWishlist ? Colors.yellow : Colors.grey,
                             )
                         )
                       ],
                     ),
-                    //gambar gambarnya
+                    // Gambar preview
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
@@ -164,14 +176,16 @@ class _DetailScreenState extends State<DetailScreen> {
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: const EdgeInsets.only(right: 8),
-                                  // bingkai
+                                  // Bingkai
                                   child: GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      // Mengubah gambar utama ketika gambar preview di-tap
+                                      _updateMainImage(widget.games.preview[index]);
+                                    },
                                     child: Container(
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(12),
                                           border: Border.all(
-                                            color: Colors.indigo.shade700,
                                             width: 2,
                                           )),
                                       child: ClipRRect(
@@ -183,12 +197,11 @@ class _DetailScreenState extends State<DetailScreen> {
                                           fit: BoxFit.cover,
                                           placeholder: (context, url) =>
                                               Container(
-                                            width: 150,
-                                            height: 150,
-                                            color: Colors.indigo.shade700,
-                                          ),
+                                                width: 150,
+                                                height: 150,
+                                              ),
                                           errorWidget: (context, url, error) =>
-                                              const Icon(Icons.error),
+                                          const Icon(Icons.error),
                                         ),
                                       ),
                                     ),
@@ -205,7 +218,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               color: Colors.black54,
                             ),
                           ),
-                          // info tengah (realese date, genre, requirements. dan deskripsi)
+                          // Info tengah (release date, genre, requirements, dan deskripsi)
                           const SizedBox(height: 15),
                           Row(
                             children: [
