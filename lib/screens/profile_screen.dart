@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:games_rr/main.dart';
+import 'package:games_rr/screens/HomeScreen.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,11 +22,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String password = '';
   String profilePicture ='GambarGame/placeholder.png';
   final picker = ImagePicker();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   // mengmabil data dari signUpScreen
   Future<void> _loadUserData() async {
@@ -59,14 +56,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
       }
     }
   }
-  Future<void> signOut() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(userName,'');
-    await prefs.setString(password,'');
-    await prefs.setString(password,'');
+
+  void signOut(){
     setState(() {
-      isSignedIn =false;
+      isSignedIn = false;
     });
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => MainScreen()),
+    );
+  }
+
+  Future<void> signIn() async{
+    await Navigator.pushNamed(context, '/SignInScreen');
   }
 
   Future<void> _getImage(ImageSource source) async {
@@ -115,16 +118,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final bool? signedInStatus = ModalRoute.of(context)?.settings.arguments as bool?;
-    isSignedIn = signedInStatus ?? false;//mengambil nilai true dari signInScreen
-
+    final isSignedIn = signedInStatus ?? false;//mengambil nilai true dari signInScreen
     if (isSignedIn) {
       _loadUserData(); // menjalankan proses data pengguna jika sudah login
     }
-
-    void signIn() {
-      Navigator.pushNamed(context, '/SignInScreen');
-    }
-
 
     return Scaffold(
       body: Stack(
@@ -269,9 +266,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 // Profile Actions
                 isSignedIn
                     ? TextButton(onPressed: signOut, child: const Text('Sign Out',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)))
-                    : TextButton(
-                  onPressed: signIn,
-                  child: const Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    : TextButton(onPressed: signIn, child: const Text('Sign In', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 ),
               ],
             ),
