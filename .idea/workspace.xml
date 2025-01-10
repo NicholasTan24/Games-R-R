@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/WishlistScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/WishlistScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/layar_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/layar_detail.dart" afterDir="false" />
-    </list>
+    <list default="true" id="87f6744a-f487-478e-b101-3690145519f4" name="Changes" comment="memperbaruhi tampilan ui" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +90,7 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="memperbaruhi tampilan ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="memperbaruhi tampilan ui" />
   </component>
 </project>
