@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:games_rr/Widgets/GameBackGround.dart';
 import 'package:games_rr/main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,9 +17,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool isSignedIn = false;
   String fullName = '';
   String userName = '';
-  int wishListCount = 0;
   String password = '';
-  String profilePicture = 'GambarGame/placeholder.png'; // Default placeholder
+  String email = '';
+  String profilePicture = 'GambarGame/placeholder.png';
   final picker = ImagePicker();
 
   Future<void> _loadUserData() async {
@@ -35,26 +35,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
       final String? encryptedFullName = prefs.getString('fullname');
       final String? encryptedUserName = prefs.getString('username');
       final String? encryptedPassword = prefs.getString('password');
+      final String? encryptedEmail = prefs.getString('email');
 
-      if (encryptedFullName != null && encryptedUserName != null && encryptedPassword != null) {
-        final decryptedFullName = encrypter.decrypt64(encryptedFullName, iv: iv);
-        final decryptedUserName = encrypter.decrypt64(encryptedUserName, iv: iv);
-        final decryptedPassword = encrypter.decrypt64(encryptedPassword, iv: iv);
-
-        setState(() {
-          fullName = decryptedFullName;
-          userName = decryptedUserName;
-          password = decryptedPassword;
-        });
-      }
+      // Jika data terdeteksi, lakukan dekripsi dan set state
+      setState(() {
+        fullName = encryptedFullName != null ? encrypter.decrypt64(encryptedFullName, iv: iv) : '';
+        userName = encryptedUserName != null ? encrypter.decrypt64(encryptedUserName, iv: iv) : '';
+        password = encryptedPassword != null ? encrypter.decrypt64(encryptedPassword, iv: iv) : '';
+        email = encryptedEmail != null ? encrypter.decrypt64(encryptedEmail, iv: iv) : '';
+      });
     }
   }
 
-  void signOut() {
+  Future<void> signOut() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isSignedIn', false);
     setState(() {
       isSignedIn = false;
     });
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen())
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => MainScreen()),
     );
   }
 
@@ -93,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.photo_camera,color: Colors.black, size: 28),
+              leading: const Icon(Icons.photo_camera, color: Colors.black, size: 28),
               title: const Text('Camera'),
               onTap: () {
                 Navigator.of(context).pop();
@@ -117,11 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            height: 180,
-            width: double.infinity,
-            color: Colors.blueGrey,
-          ),
+          CostumeContainer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
@@ -159,10 +156,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        _buildInfoRow(Icons.person, 'Username', userName),
-                        _buildInfoRow(Icons.person_outline, 'Full Name', fullName),
-                        _buildInfoRow(Icons.lock, 'Password', '*' * password.length),
-                        _buildInfoRow(Icons.star, 'Wish List', wishListCount.toString()),
+                        _buildInfoRow(Icons.person, 'Username', userName, isSignedIn),
+                        _buildInfoRow(Icons.person_outline, 'Full Name', fullName, isSignedIn),
+                        _buildInfoRow(Icons.lock, 'Password', '*' * password.length, isSignedIn),
+                        _buildInfoRow(Icons.email, 'Email', email, isSignedIn),
                       ],
                     ),
                   ),
@@ -187,13 +184,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildInfoRow(IconData icon, String label, String value) {
+  Widget _buildInfoRow(IconData icon, String label, String value, bool isSignedIn) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -203,8 +200,89 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Text('$label:', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           const SizedBox(width: 10),
           Expanded(child: Text(value, style: const TextStyle(fontSize: 16))),
+          if (isSignedIn && label != 'Wish List')
+            IconButton(
+              icon: const Icon(Icons.edit, color: Color(0xFF0b1640)),
+              onPressed: () {
+                _showEditDialog(label);
+              },
+            ),
         ],
       ),
+    );
+  }
+
+  void _showEditDialog(String label) {
+    final controller = TextEditingController();
+    if (label == 'Username') controller.text = userName;
+    if (label == 'Full Name') controller.text = fullName;
+    if (label == 'Password') controller.text = password;
+    if (label == 'Email') controller.text = email;
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Edit $label'),
+          content: TextField(
+            controller: controller,
+            obscureText: label == 'Password',
+            decoration: InputDecoration(hintText: 'Masukkan $label baru'),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Batal'),
+            ),
+            TextButton(
+              onPressed: () async {
+                setState(() {
+                  if (label == 'Username') {
+                    userName = controller.text;
+                  }
+                  if (label == 'Full Name') {
+                    fullName = controller.text;
+                  }
+                  if (label == 'Password') {
+                    password = controller.text;
+                  }
+                  if (label == 'Email') {
+                    email = controller.text;
+                  }
+                });
+
+                // Simpan perubahan ke SharedPreferences
+                final prefs = await SharedPreferences.getInstance();
+                final keyBase64 = prefs.getString('key');
+                final ivBase64 = prefs.getString('iv');
+                if (keyBase64 != null && ivBase64 != null) {
+                  final key = encrypt.Key.fromBase64(keyBase64);
+                  final iv = encrypt.IV.fromBase64(ivBase64);
+                  final encrypter = encrypt.Encrypter(encrypt.AES(key));
+
+                  if (label == 'Username') {
+                    prefs.setString('username', encrypter.encrypt(controller.text, iv: iv).base64);
+                  }
+                  if (label == 'Full Name') {
+                    prefs.setString('fullname', encrypter.encrypt(controller.text, iv: iv).base64);
+                  }
+                  if (label == 'Password') {
+                    prefs.setString('password', encrypter.encrypt(controller.text, iv: iv).base64);
+                  }
+                  if (label == 'Email') {
+                    prefs.setString('email', encrypter.encrypt(controller.text, iv: iv).base64);
+                  }
+                }
+
+                Navigator.of(context).pop();
+              },
+              child: const Text('Simpan'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
