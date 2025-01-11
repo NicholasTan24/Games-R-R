@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:games_rr/Widgets/GameBackGround.dart';
 import 'package:games_rr/main.dart';
@@ -19,13 +18,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String userName = '';
   String password = '';
   String email = '';
-  String profilePicture = 'GambarGame/placeholder.png';
+  String profilePicture = '';
   final picker = ImagePicker();
 
   Future<void> _loadUserData() async {
     final prefs = await SharedPreferences.getInstance();
     final String? keyBase64 = prefs.getString('key');
     final String? ivBase64 = prefs.getString('iv');
+
+    setState(() {
+      profilePicture = prefs.getString('profilePicture') ?? '';
+    });
 
     if (keyBase64 != null && ivBase64 != null) {
       final key = encrypt.Key.fromBase64(keyBase64);
@@ -55,7 +58,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => MainScreen()),
+      MaterialPageRoute(builder: (context) => const MainScreen()),
     );
   }
 
@@ -69,6 +72,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       setState(() {
         profilePicture = pickedFile.path;
       });
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('profilePicture', pickedFile.path);
     }
   }
 
@@ -118,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          CostumeContainer(),
+          const CostumeContainer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
@@ -135,9 +140,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: CircleAvatar(
                         radius: 60,
                         backgroundColor: Colors.grey[200],
-                        backgroundImage: profilePicture == 'GambarGame/placeholder.png'
-                            ? const AssetImage('GambarGame/placeholder.png')
-                            : FileImage(File(profilePicture)) as ImageProvider,
+                        backgroundImage: profilePicture.isNotEmpty
+                            ? // : FileImage(File(profilePicture)),
+                            NetworkImage(profilePicture)
+                        : const AssetImage('GambarGame/placeholder.png')
+
                       ),
                     ),
                     if (isSignedIn)
